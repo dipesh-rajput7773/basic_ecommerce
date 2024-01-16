@@ -1,0 +1,63 @@
+@media screen and (max-width: 1200px){
+
+    .category-imgstyle {
+
+      
+        max-width: 400px;
+        
+        background-repeat: no-repeat;
+        background-position: center top;
+    
+    
+    }
+    }
+
+
+
+
+    @media screen and (max-width: 991px){
+             
+        .reverse-sec{
+            flex-direction: column-reverse !important;
+        }
+
+        .popular-item-dec h2 {
+            
+            font-size: 52px;
+          
+        }
+
+        .popular-item-dec p {
+     
+            max-width: 700px;
+           
+        }
+ 
+
+        .belive-content {
+            height: 450px;
+            background-size: 509px;
+            margin-bottom: 30px;
+            overflow: hidden;
+            padding: 0 !important;
+            
+        }
+
+        
+
+        .belive-content h2{
+            font-size: 40px;
+            line-height: 71px;
+            letter-spacing: -0.026em;
+            padding: 20px;
+           
+        }
+        .believe-sec{
+            margin-bottom: 60px;
+        }
+
+        
+
+
+     
+     }
