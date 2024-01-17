@@ -67,8 +67,7 @@ function SingleProduct() {
                       <img
                          src={singleProduct.image}
                              alt={singleProduct.title}
-                             width={1200}  // Set the width to 1200 pixels
-                             height={630}  // Set the height to 630 pixels
+                             
                       />
 
                     </div>
