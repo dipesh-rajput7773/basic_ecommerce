@@ -37,7 +37,7 @@ function SingleProduct() {
         }
 
         alert('Product added to cart');
-
+        
         if (redirect) {
             navigate('/cart');
         }
@@ -49,31 +49,26 @@ function SingleProduct() {
 
     const productUrl = window.location.href;
 
+    // Placeholder image URL for testing
+    const placeholderImageUrl = 'https://via.placeholder.com/1200x630.jpg';
+
     return (
         <div className='single-product-page'>
             <Helmet>
                 <title>{singleProduct.title}</title>
                 <meta property="og:title" content={singleProduct.title} />
                 <meta property="og:description" content={singleProduct.description} />
-                <meta property="og:image" content={singleProduct.image} />
+                <meta property="og:image" content={placeholderImageUrl} />
                 <meta property="og:url" content={productUrl} />
                 <meta property="og:type" content="product" />
                 <meta property="product:price:amount" content={singleProduct.price} />
-
-                {/* Twitter meta tags */}
-                <meta name="twitter:card" content="summary_large_image" />
-                <meta name="twitter:site" content="@yourTwitterHandle" /> {/* Replace with your Twitter handle */}
-                <meta name="twitter:title" content={singleProduct.title} />
-                <meta name="twitter:description" content={singleProduct.description} />
-                <meta name="twitter:image" content={singleProduct.image} />
-
                 {/* Add more meta tags as needed */}
             </Helmet>
 
             <div className='row'>
                 <div className='col-md-6'>
                     <div className='single-product-image'>
-                        <img src={singleProduct.image} alt={singleProduct.title} />
+                        <img src={placeholderImageUrl} alt={singleProduct.title} />
                     </div>
                 </div>
 
@@ -93,13 +88,13 @@ function SingleProduct() {
                         </div>
 
                         <div>
-                            {/* Twitter Share Button */}
+                            {/* Facebook Share Button */}
                             <a
-                                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(productUrl)}&text=${encodeURIComponent(singleProduct.title)}&via=yourTwitterHandle`}
+                                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(productUrl)}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
-                                Share on Twitter
+                                Share on Facebook
                             </a>
                         </div>
                     </div>
