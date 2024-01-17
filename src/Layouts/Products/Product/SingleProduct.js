@@ -18,27 +18,28 @@ function SingleProduct() {
     }, [id]);
 
     const handleCart = (product, redirect) => {
-        console.log(singleProduct)
-        const cart = JSON.parse(localStorage.getItem('cart')) || []
-        const isProductExist = cart.find(item => item.id === singleProduct.id)
+        console.log(singleProduct);
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const isProductExist = cart.find(item => item.id === singleProduct.id);
 
-        if(isProductExist){
-            const updatedCart = cart.map(item =>{
-                if(item.id === singleProduct.id){
-                    return{
-                        ...item ,  quantity: item.quantity+1
-                    }
+        if (isProductExist) {
+            const updatedCart = cart.map(item => {
+                if (item.id === singleProduct.id) {
+                    return {
+                        ...item, quantity: item.quantity + 1
+                    };
                 }
-                return item
-            })
-            localStorage.setItem('cart',JSON.stringify(updatedCart))
-
-        }else{
-            localStorage.setItem('cart',JSON.stringify([...cart ,{...singleProduct,quantity:1}]))
+                return item;
+            });
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+        } else {
+            localStorage.setItem('cart', JSON.stringify([...cart, { ...singleProduct, quantity: 1 }]));
         }
-        alert('product added to cart')
-        if(redirect){
-            navigate('/cart')
+
+        alert('Product added to cart');
+        
+        if (redirect) {
+            navigate('/cart');
         }
     };
 
@@ -48,13 +49,16 @@ function SingleProduct() {
 
     const productUrl = window.location.href;
 
+    // Placeholder image URL for testing
+    const placeholderImageUrl = 'https://via.placeholder.com/1200x630.jpg';
+
     return (
         <div className='single-product-page'>
             <Helmet>
                 <title>{singleProduct.title}</title>
                 <meta property="og:title" content={singleProduct.title} />
                 <meta property="og:description" content={singleProduct.description} />
-                <meta property="og:image" content={singleProduct.image} />
+                <meta property="og:image" content={placeholderImageUrl} />
                 <meta property="og:url" content={productUrl} />
                 <meta property="og:type" content="product" />
                 <meta property="product:price:amount" content={singleProduct.price} />
@@ -64,12 +68,7 @@ function SingleProduct() {
             <div className='row'>
                 <div className='col-md-6'>
                     <div className='single-product-image'>
-                      <img
-                         src={singleProduct.image}
-                             alt={singleProduct.title}
-                             
-                      />
-
+                        <img src={placeholderImageUrl} alt={singleProduct.title} />
                     </div>
                 </div>
 
