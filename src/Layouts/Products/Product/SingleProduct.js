@@ -1,24 +1,23 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate, json, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-function SingleProduct() {
+import { Helmet } from 'react-helmet';
 
+function SingleProduct() {
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log(id)
 
-    const [singleProduct, SetSingleProduct] = useState([])
+    const [singleProduct, setSingleProduct] = useState(null);
 
     useEffect(() => {
-        axios.get('https://fakestoreapi.com/products/' + id)
+        // Fetch product data
+        axios.get(`https://fakestoreapi.com/products/${id}`)
             .then((results) => {
-                console.log(typeof results.data)
-                console.log(results.data)
-                SetSingleProduct(results.data)
-            })
+                setSingleProduct(results.data);
+            });
+    }, [id]);
 
-    }, [])
-    const handleCart = (singleProduct,redirect) => {
+    const handleCart = (product, redirect) => {
         console.log(singleProduct)
         const cart = JSON.parse(localStorage.getItem('cart')) || []
         const isProductExist = cart.find(item => item.id === singleProduct.id)
@@ -41,60 +40,64 @@ function SingleProduct() {
         if(redirect){
             navigate('/cart')
         }
+    };
+
+    if (!singleProduct) {
+        return <div>Loading...</div>;
     }
+
+    const productUrl = window.location.href;
 
     return (
         <div className='single-product-page'>
-            <div className='row'>
+            <Helmet>
+                <title>{singleProduct.title}</title>
+                <meta property="og:title" content={singleProduct.title} />
+                <meta property="og:description" content={singleProduct.description} />
+                <meta property="og:image" content={singleProduct.image} />
+                <meta property="og:url" content={productUrl} />
+                <meta property="og:type" content="product" />
+                <meta property="product:price:amount" content={singleProduct.price} />
+                {/* Add more meta tags as needed */}
+            </Helmet>
 
+            <div className='row'>
                 <div className='col-md-6'>
                     <div className='single-product-image'>
-
-                        <img src={singleProduct.image}></img>
-
+                        <img src={singleProduct.image} alt={singleProduct.title} />
                     </div>
                 </div>
 
-
                 <div className='col-md-6'>
                     <div className='single-product-details'>
-
-                        <div className='single-product-name'> {singleProduct.title} </div>
-                        <div className='single-product-desc'>
-                            {singleProduct.description}
-                        </div>
-                        <div className='single-product-price'>
-                            ${singleProduct.price}
-                        </div>
-                        <div className='single-product-desc'>
-                            {singleProduct.category}
-                        </div>
+                        <div className='single-product-name'>{singleProduct.title}</div>
+                        <div className='single-product-desc'>{singleProduct.description}</div>
+                        <div className='single-product-price'>${singleProduct.price}</div>
+                        <div className='single-product-desc'>{singleProduct.category}</div>
                         <div className='cart'>
                             <button className='button' onClick={() => handleCart(singleProduct)}>
                                 Add to Cart
                             </button>
-                            <button className='button' onClick={() => handleCart(singleProduct,true)}>
-                               but it now
+                            <button className='button' onClick={() => handleCart(singleProduct, true)}>
+                                Buy it now
                             </button>
                         </div>
-                        {/* <div className='single-product-desc'>
-                {singleProduct.rating.rate}
-            </div> */}
 
-
-
+                        <div>
+                            {/* Facebook Share Button */}
+                            <a
+                                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(productUrl)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Share on Facebook
+                            </a>
+                        </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-
-
-
-
-    )
+    );
 }
 
-export default SingleProduct
+export default SingleProduct;
