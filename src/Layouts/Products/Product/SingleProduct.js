@@ -54,7 +54,7 @@ function SingleProduct() {
                 <title>{singleProduct.title}</title>
                 <meta property="og:title" content={singleProduct.title} />
                 <meta property="og:description" content={singleProduct.description} />
-                <meta property="og:image" content={singleProduct.image} />
+                <meta property="og:image" content={'https://api.popsmokemedia.com/images//1704773161664-4898571.jpg'} />
                 <meta property="og:url" content={productUrl} />
                 <meta property="og:type" content="product" />
                 <meta property="product:price:amount" content={singleProduct.price} />
