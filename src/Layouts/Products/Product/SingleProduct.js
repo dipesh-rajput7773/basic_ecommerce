@@ -64,7 +64,13 @@ function SingleProduct() {
             <div className='row'>
                 <div className='col-md-6'>
                     <div className='single-product-image'>
-                        <img src={singleProduct.image} alt={singleProduct.title} />
+                      <img
+                         src={singleProduct.image}
+                             alt={singleProduct.title}
+                             width={1200}  // Set the width to 1200 pixels
+                             height={630}  // Set the height to 630 pixels
+                      />
+
                     </div>
                 </div>
 
