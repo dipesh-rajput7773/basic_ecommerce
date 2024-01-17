@@ -49,8 +49,7 @@ function SingleProduct() {
 
     const productUrl = window.location.href;
 
-    // Placeholder image URL for testing
-    const placeholderImageUrl = 'https://via.placeholder.com/1200x630.jpg';
+ 
 
     return (
         <div className='single-product-page'>
@@ -58,7 +57,7 @@ function SingleProduct() {
                 <title>{singleProduct.title}</title>
                 <meta property="og:title" content={singleProduct.title} />
                 <meta property="og:description" content={singleProduct.description} />
-                <meta property="og:image" content={placeholderImageUrl} />
+                <meta property="og:image" content={singleProduct.image} />
                 <meta property="og:url" content={productUrl} />
                 <meta property="og:type" content="product" />
                 <meta property="product:price:amount" content={singleProduct.price} />
@@ -68,7 +67,7 @@ function SingleProduct() {
             <div className='row'>
                 <div className='col-md-6'>
                     <div className='single-product-image'>
-                        <img src={placeholderImageUrl} alt={singleProduct.title} />
+                        <img src={singleProduct.image} alt={singleProduct.title} />
                     </div>
                 </div>
 
