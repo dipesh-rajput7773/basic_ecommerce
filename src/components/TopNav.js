@@ -11,19 +11,7 @@ function TopNav() {
 
      const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        const badgeStyle = {
-        content: `"${cart}"`,
-        fontSize: '12px',
-        color: '#fff',
-        background: 'red',
-        borderRadius: '50%',
-        padding: '0 5px',
-        position: 'relative',
-        left: '-8px',
-        top: '-10px',
-        opacity: '0.9',
-      };
-    console.log(cart.length)
+       
     return (
         <>  
      
@@ -37,7 +25,7 @@ function TopNav() {
                         <li> <Link to={'/loginpage'}> <PermIdentityIcon /></Link> </li>
                         <li> <SearchIcon /></li>
                         <li> <FavoriteBorderIcon /></li>
-                       <li> <Link to={'/cart'}><LocalMallIcon style={badgeStyle}/></Link></li>
+                       <li> <Link to={'/cart'}><LocalMallIcon/> {cart.length}</Link></li>
                     </ul>
                 </div>
 
