@@ -48,16 +48,18 @@ function SingleProduct() {
     }
 
     const productUrl = window.location.href;
+    const shouldUseLargeImageCard = singleProduct.someProperty === "someValue";
 
- 
+
 
     return (
         <> 
 
-            <Helmet>
-            <meta name="twitter:card" content="summary_large_image" />
-               <meta name="twitter:image" content={singleProduct.image} />
-            </Helmet>
+<Helmet>
+    <meta name="twitter:card" content={shouldUseLargeImageCard ? "summary_large_image" : "summary"} />
+    <meta name="twitter:image" content={singleProduct.image} />
+    {/* Other Twitter card meta tags as needed */}
+</Helmet>
 
         <div className='single-product-page'>
     
