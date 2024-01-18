@@ -6,6 +6,9 @@ import LocalMallIcon from '@mui/icons-material/LocalMall';
 import { Link } from 'react-router-dom';
 
 function TopNav() {
+
+     const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(cart)
     return (
         <>  
      
