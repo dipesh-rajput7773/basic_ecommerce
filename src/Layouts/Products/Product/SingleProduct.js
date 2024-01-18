@@ -54,13 +54,8 @@ function SingleProduct() {
     return (
         <div className='single-product-page'>
             <Helmet>
-                <title>{singleProduct.title}</title>
-                <meta property="og:title" content={singleProduct.title} />
-                <meta property="og:description" content={singleProduct.description} />
                 <meta property="og:image" content={singleProduct.image} />
                 <meta property="og:url" content={productUrl} />
-                <meta property="og:type" content="product" />
-                <meta property="product:price:amount" content={singleProduct.price} />
                 {/* Add more meta tags as needed */}
             </Helmet>
 
