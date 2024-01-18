@@ -18,7 +18,7 @@ function TopNav() {
             <div className='top-head'>
                 <div className='sp-offer'><a href='#'> Best special Offers 40% Off</a></div>
 
-                <div className='logo'> Ecommerce</div>
+                <div className='logo'> <Link to={'/'}> Ecommerce </Link></div>
 
                 <div className='top-menu'>
                     <ul>
