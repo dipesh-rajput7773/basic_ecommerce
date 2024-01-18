@@ -19,7 +19,7 @@ function TopNav() {
                         <li> <Link to={'/loginpage'}> <PermIdentityIcon /></Link> </li>
                         <li> <SearchIcon /></li>
                         <li> <FavoriteBorderIcon /></li>
-                        <li> <LocalMallIcon /></li>
+                         <li> <Link to={'/cart'}><LocalMallIcon /></Link></li>
                     </ul>
                 </div>
 
