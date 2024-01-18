@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 function TopNav() {
 
      const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log(cart)
+    console.log('cart')
     return (
         <>  
      
