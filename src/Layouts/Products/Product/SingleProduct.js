@@ -55,7 +55,7 @@ function SingleProduct() {
         <> 
 
             <Helmet>
-              <meta name="twitter:card" content={singleProduct.image} />
+            <meta name="twitter:card" content="summary_large_image" />
                <meta name="twitter:image" content={singleProduct.image} />
             </Helmet>
 
