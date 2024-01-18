@@ -837,7 +837,7 @@ margin: 0 auto !important;
   --marquee-speed: 10s;
   --marquee-hover-offset: -50px;
   --marquee-hover-transition-speed: .7s;
-  --marquee-fade-edges: 30%;
+  --marquee-fade-edges: 30%; 
 }
 
 
