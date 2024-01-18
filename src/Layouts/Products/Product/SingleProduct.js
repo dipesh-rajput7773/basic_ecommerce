@@ -52,10 +52,11 @@ function SingleProduct() {
  
 
     return (
-        <>           <Helmet>
-                <meta property="og:image" content={singleProduct.image} />
-                <meta property="og:url" content={productUrl} />
-                
+        <> 
+
+            <Helmet>
+              <meta name="twitter:card" content={singleProduct.image} />
+               <meta name="twitter:image" content={singleProduct.image} />
             </Helmet>
 
         <div className='single-product-page'>
@@ -91,6 +92,13 @@ function SingleProduct() {
                             >
                                 Share on Facebook
                             </a>
+                            <a
+    href={`https://twitter.com/share?url=${encodeURIComponent(productUrl)}`}
+    target="_blank"
+    rel="noopener noreferrer"
+> Twitter
+</a>
+
                         </div>
                     </div>
                 </div>
