@@ -1,7 +1,7 @@
  import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
+//import { Helmet } from 'react-helmet';
 
 function SingleProduct() {
     const navigate = useNavigate();
@@ -52,11 +52,11 @@ function SingleProduct() {
  
 
     return (
-             <Helmet>
+     {/*  <Helmet>
                 <meta property="og:image" content={singleProduct.image} />
                 <meta property="og:url" content={productUrl} />
                 {/* Add more meta tags as needed */}
-            </Helmet>
+            </Helmet> */}
 
         <div className='single-product-page'>
     
