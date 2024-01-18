@@ -52,11 +52,11 @@ function SingleProduct() {
  
 
     return (
-     {/*  <Helmet>
-                <meta property="og:image" content={singleProduct.image} />
-                <meta property="og:url" content={productUrl} />
-                {/* Add more meta tags as needed */}
-            </Helmet> */}
+        //    <Helmet>
+        //         <meta property="og:image" content={singleProduct.image} />
+        //         <meta property="og:url" content={productUrl} />
+                
+        //     </Helmet>
 
         <div className='single-product-page'>
     
