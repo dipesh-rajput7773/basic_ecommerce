@@ -63,7 +63,7 @@ function SingleProduct() {
             <div className='row'>
                 <div className='col-md-6'>
                     <div className='single-product-image'>
-                        <img src={singleProduct.image} alt={singleProduct.title} />
+                        <img className='w-100' src={singleProduct.image} alt={singleProduct.title} />
                     </div>
                 </div>
 
