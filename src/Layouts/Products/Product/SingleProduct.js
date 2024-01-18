@@ -56,6 +56,7 @@ function SingleProduct() {
         <> 
 
 <Helmet>
+    <meta property="og:title" content="singleProduct.title" />
     <meta name="twitter:card" content={shouldUseLargeImageCard ? "summary_large_image" : "summary"} />
     <meta name="twitter:image" content={singleProduct.image} />
     {/* Other Twitter card meta tags as needed */}
