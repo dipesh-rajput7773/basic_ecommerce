@@ -61,11 +61,14 @@ function SingleProduct() {
     <meta property="og:image" content={singleProduct.image} />
     <meta property="og:url" content={productUrl} />
     <meta property="og:description" content={singleProduct.description} />
-    <meta property="og:title" content={singleProduct.title} /> {/* Fix here */}
+    <meta property="og:title" content={singleProduct.title} />
+    <meta property="og:type" content="product" /> {/* Add product type */}
+    <meta property="og:locale" content="en_US" /> {/* Add locale information */}
     <meta name="twitter:card" content={shouldUseLargeImageCard ? "summary_large_image" : "summary"} />
     <meta name="twitter:image" content={singleProduct.image} />
     {/* Other Twitter card meta tags as needed */}
 </Helmet>
+
 
 
         <div className='single-product-page'>
