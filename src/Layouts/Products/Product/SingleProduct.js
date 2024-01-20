@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 function SingleProduct() {
     const navigate = useNavigate();
     const { id } = useParams();
-
+     
     const [singleProduct, setSingleProduct] = useState(null);
 
     useEffect(() => {
