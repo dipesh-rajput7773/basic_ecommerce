@@ -48,7 +48,9 @@ function SingleProduct() {
     }
 
     const productUrl = window.location.href;
-    const shouldUseLargeImageCard = singleProduct.someProperty === "someValue";
+   
+    const shouldUseLargeImageCard = singleProduct.useLargeImageCard === "someValue";
+
 
 
 
@@ -57,7 +59,8 @@ function SingleProduct() {
 
 <Helmet>
   
-   <meta property="og:image" content={singleProduct.image} />
+  <meta property="og:image" content={singleProduct.image} />
+
    <meta property="og:url" content={productUrl} />
 <meta property="og:description" content="" />
     <meta property="og:title" content="singleProduct.title" />
