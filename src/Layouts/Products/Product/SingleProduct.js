@@ -49,7 +49,7 @@ function SingleProduct() {
 
     const productUrl = window.location.href;
    
-    const shouldUseLargeImageCard = singleProduct.useLargeImageCard === "someValue";
+    const shouldUseLargeImageCard = singleProduct.someProperty === "someValue";
 
 
 
