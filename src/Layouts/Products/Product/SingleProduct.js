@@ -50,6 +50,7 @@ function SingleProduct() {
     const productUrl = window.location.href;
    
     const shouldUseLargeImageCard = singleProduct.someProperty === "someValue";
+    const encodedImageUrl = encodeURIComponent(singleProduct.image);
 
 
 
@@ -58,16 +59,16 @@ function SingleProduct() {
         <> 
 
 <Helmet>
-    <meta property="og:image" content={encodeURIComponent(singleProduct.image)} />
-    <meta property="og:url" content={encodeURIComponent(productUrl)} />
-    <meta property="og:description" content={singleProduct.description} />
-    <meta property="og:title" content={singleProduct.title} />
-    <meta property="og:type" content="product" /> {/* Add product type */}
-    <meta property="og:locale" content="en_US" /> {/* Add locale information */}
-    <meta name="twitter:card" content={shouldUseLargeImageCard ? "summary_large_image" : "summary"} />
-    <meta name="twitter:image" content={encodeURIComponent(singleProduct.image)} />
-    {/* Other Twitter card meta tags as needed */}
-</Helmet>
+                <meta property="og:url" content={productUrl} />
+                <meta property="og:type" content="product" />
+                <meta property="og:title" content={singleProduct.title} />
+                <meta property="og:description" content={singleProduct.description} />
+                <meta property="og:image" content={encodedImageUrl} />
+                <meta property="og:locale" content="en_US" />
+                <meta name="twitter:card" content={shouldUseLargeImageCard ? "summary_large_image" : "summary"} />
+                <meta name="twitter:image" content={encodedImageUrl} />
+                {/* Other Twitter card meta tags as needed */}
+            </Helmet>
 
 
 
