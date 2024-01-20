@@ -64,10 +64,11 @@ function SingleProduct() {
                 <meta property="og:title" content={singleProduct.title} />
                 <meta property="og:description" content={singleProduct.description} />
                 <meta property="og:image" content={encodedImageUrl} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
                 <meta property="og:locale" content="en_US" />
                 <meta name="twitter:card" content={shouldUseLargeImageCard ? "summary_large_image" : "summary"} />
                 <meta name="twitter:image" content={encodedImageUrl} />
-                {/* Other Twitter card meta tags as needed */}
             </Helmet>
 
 
